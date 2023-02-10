@@ -1,0 +1,20 @@
+
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <ion-item>
+          <ion-label >id</ion-label>
+          <ion-input type="text" [(ngModel)]="member.username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label >Password</ion-label>
+          <ion-input type="password" [(ngModel)]="member.password"></ion-input>
+        </ion-item>
+        <button  (click)="signIn();">Login</button>
+        <button (click)="signUp();">Register</button>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

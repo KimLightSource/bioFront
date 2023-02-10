@@ -2,10 +2,12 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
+import {lifelogPage}  from './lifelog.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import {LifelogRoutingModule} from './lifelog-routing.module';
+import {LifelogModalPageModule} from "./lifelog-modal/lifelog-modal.module";
+import {modalService} from "../api/modal-service";
 
 @NgModule({
   imports: [
@@ -13,8 +15,11 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    LifelogRoutingModule,
+    LifelogModalPageModule
   ],
-  declarations: [Tab1Page]
+  providers: [
+  ],
+  declarations: [lifelogPage]
 })
-export class Tab1PageModule {}
+export class LifelogPageModule {}
