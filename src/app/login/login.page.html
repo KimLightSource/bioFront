@@ -1,20 +1,49 @@
 
-<ion-content >
-  <ion-grid>
-    <ion-row>
-      <ion-card>
-        <ion-item>
-          <ion-label >id</ion-label>
-          <ion-input type="text" [(ngModel)]="member.username"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label >Password</ion-label>
-          <ion-input type="password" [(ngModel)]="member.password"></ion-input>
-        </ion-item>
-        <button  (click)="signIn();">Login</button>
-        <button (click)="signUp();">Register</button>
-      </ion-card>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+<!--<ion-content >-->
+<!--  <ion-grid>-->
+<!--    <ion-row>-->
+<!--      <ion-card>-->
+<!--        <ion-item>-->
+<!--          <ion-label >id</ion-label>-->
+<!--          <ion-input type="text" [(ngModel)]="member.username"></ion-input>-->
+<!--        </ion-item>-->
+<!--        <ion-item>-->
+<!--          <ion-label >Password</ion-label>-->
+<!--          <ion-input type="password" [(ngModel)]="member.password"></ion-input>-->
+<!--        </ion-item>-->
+<!--        <button  (click)="signIn();">Login</button>-->
+<!--        <button (click)="signUp();">Register</button>-->
+<!--      </ion-card>-->
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+<!--</ion-content>-->
 
+<ion-content>
+  <div class="container">
+    <div class="screen">
+      <div class="screen__content">
+        <form class="login" [formGroup]="form" >
+          <div class="login__field">
+            <i class="login__icon fas fa-user"></i>
+            <input type="text" class="login__input" placeholder="User name / Email" formControlName="id">
+          </div>
+          <div class="login__field">
+            <i class="login__icon fas fa-lock"></i>
+            <input type="password" class="login__input" placeholder="Password" formControlName="password">
+          </div>
+          <button class="button login__submit" (click)="signIn()">
+            <span class="button__text" >Log In Now</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>
+        </form>
+      </div>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

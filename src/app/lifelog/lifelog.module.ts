@@ -6,7 +6,7 @@ import {lifelogPage}  from './lifelog.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import {LifelogRoutingModule} from './lifelog-routing.module';
-import {LifelogModalPageModule} from "./lifelog-modal/lifelog-modal.module";
+import {LifelogModalPageModule} from "./reactive-lifelog-modal/lifelog-modal.module";
 import {modalService} from "../api/modal-service";
 
 @NgModule({

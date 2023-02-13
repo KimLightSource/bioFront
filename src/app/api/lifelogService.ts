@@ -9,7 +9,8 @@ import {Lifelog} from "../model/lifelog";
 export class LifelogService {
   url = 'http://localhost:8080';
 
-  constructor(private http: HttpClient,
+  constructor(
+    private http: HttpClient,
 
   ) { }
 
@@ -21,8 +22,11 @@ export class LifelogService {
     return this.http.post<any>(`${this.url}/login`, form, { observe: 'response' })
   }
 
- // getLatest(): Observable<Lifelog> {
- //    return this.http.get
- // }
+  /* bp select */
+  getAllBp() : Observable<any> {
+    return this.http.get<any>(`${this.url}/lifelog/Allbp`, { observe: 'response' })
+  }
+
+
 
 }

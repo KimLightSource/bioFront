@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      혈압
+      <ion-button class="add" fill="clear">
+        <ion-icon slot="start" [ios]="'add' + '-outline'" [md]="'add' + '-sharp'"></ion-icon>
+      </ion-button>
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngFor="let p of lifeLogData; let i = index">
+    <ion-item button detail="true" (click)="showDetail()">
+      <span class="left">{{p.dateTime}}</span>
+      <p class="right">
+        {{p.maxBp}}/{{p.minBp}} mmHg,
+      </p>
+    </ion-item>
+    <div *ngIf=detail>
+    <li>
+      장소 : {{p.location}}
+    </li>
+    <li>
+      복용상태 : {{p.drugField}}
+    </li>
+    <li>
+      맥박 : {{p.pulse}}
+    </li>
+    </div>
+  </div>
+
+
+</ion-content>
+

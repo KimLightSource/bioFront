@@ -1,0 +1,30 @@
+<ion-modal [isOpen]="modalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{content.lifelogName}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setClose(false)">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <form (ngSubmit)="onSubmit()">
+      <p *ngFor="let p of content.text; let i = index">
+        <label> {{p}} </label>
+        <input type="text">
+      </p>
+      <p *ngFor="let p of content.select; let i = index">
+        {{p.title}}
+        <span *ngFor="let q of p.selCont let i = index">
+          <label> {{q}}</label>
+          <input type="radio" value="{{q}}" name="{{p.title}}" >
+        </span>
+
+      </p>
+        <button type="submit">등록하기</button>
+      </form>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+

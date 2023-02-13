@@ -15,11 +15,18 @@
 
   <ion-list id="inbox-list">
   <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-    <ion-item routerLinkActive="selected" (click)="setOpen(true, p.modalContent)">
+    <ion-item routerLinkActive="selected" (click)="setOpen(true, p.modalContent, p.modalContent)">
       <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
       <ion-label>{{ p.title }}</ion-label>
     </ion-item>
   </ion-menu-toggle>
   </ion-list>
-  <app-lifelog-modal [modalOpen]="modalCon" (modalClosed)="setClose($event)" [content]="content"></app-lifelog-modal>
+  <app-lifelog-modal
+    [modalOpen]="modalCon"
+    (modalClosed)="setClose($event)"
+    [content]="content"
+    [text]="text"
+    [modalGroup]="modalGroup"
+  >
+  </app-lifelog-modal>
 </ion-content>

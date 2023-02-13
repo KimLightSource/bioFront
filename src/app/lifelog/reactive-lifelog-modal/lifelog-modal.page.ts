@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {modalService} from "../../api/modal-service";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-lifelog-modal',
@@ -8,27 +8,42 @@ import {modalService} from "../../api/modal-service";
 })
 export class LifelogModalPage implements OnInit {
 
-  // setOpen(isOpen: boolean) {
-  //   console.log(this.isModalOpen)
-  //   this.isModalOpen = isOpen;
-  // }
-  ngOnInit() {
-  }
   @Input() content! : any;
 
   @Input() modalOpen! : boolean;
+  @Input() text !: any;
+  @Input() modalGroup !: FormGroup;
 
   @Output() modalClosed = new EventEmitter<boolean>;
 
 
   constructor(
-  ) {   }
+    private formBuilder: FormBuilder,
+  ) {
 
-  setOpen(isOpen: boolean) {
+  }
+
+
+  ngOnInit() {
+
+  }
+
+
+  setClose(isOpen: boolean) {
     console.log(this.content);
     this.modalOpen = isOpen;
     this.modalClosed.emit(this.modalOpen)
+
+    console.log(this.text)
+
   };
+
+  onSubmit():void {
+    // this.checkoutForm = this.formBuilder.group(
+    //   this.text
+    // );
+    // console.log(this.groupform.value)
+  }
 
 
 }

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BpPageRoutingModule } from './bp-routing.module';
+import { LifelogModalV2PageRoutingModule } from './lifelog-modal-v2-routing.module';
 
-import { BpPage } from './bp.page';
+import { LifelogModalV2Page } from './lifelog-modal-v2.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BpPageRoutingModule
+    LifelogModalV2PageRoutingModule
   ],
-  declarations: [BpPage]
+  declarations: [LifelogModalV2Page]
 })
-export class BpPageModule {}
+export class LifelogModalV2PageModule {}

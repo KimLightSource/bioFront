@@ -17,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('../lifelog/lifelog.module').then(m => m.LifelogPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'nonReactiveLifelog',
+        loadChildren: () => import('../non-reactive-lifelog/non-reactive-lifelog.module').then(m => m.nonReactiveLifelogPageModule)
       },
       {
         path: '',

@@ -7,9 +7,18 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'lifelog-modal',
-    loadChildren: () => import('./lifelog/lifelog-modal/lifelog-modal.module').then(m => m.LifelogModalPageModule)
-  }
+    path: 'lifelog-modal-v2',
+    loadChildren: () => import('./non-reactive-lifelog/lifelog-modal-v2/lifelog-modal-v2.module').then(m => m.LifelogModalV2PageModule)
+  },
+  // {
+  //   path: 'lifelog-modal',
+  //   loadChildren: () => import('./lifelog/reactive-lifelog-modal/lifelog-modal.module').then(m => m.LifelogModalPageModule)
+  // },
+  // {
+  //   path: 'nonReactiveLifelog',
+  //   loadChildren: () => import('./non-reactive-lifelog/non-reactive-lifelog.module').then( m => m.nonReactiveLifelogPageModule)
+  //
+  // }
 ];
 @NgModule({
   imports: [
