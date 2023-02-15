@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>lifelogModalV2</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-modal [isOpen]="modalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{modalData.lifelogName}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setClose(false)">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+        <p *ngFor="let p of modalData.text; let i = index" >
+          <label> {{p}} </label>
+          <input type="text"  formControlName="{{modalData.textData[i]}}">
+        </p>
+        <p *ngFor="let p of modalData.select; let i = index">
+          {{p.title}}
+          <span *ngFor="let q of p.selCont let i = index">
+            {{q}}
+            <input type="radio" name="{{p.selectData}}" formControlName="{{p.selectData}}" value="{{p.selContData[i]}}">
+          </span>
+        </p>
+        <ion-button type="submit" (click)="presentAlert()">등록하기</ion-button>
+      </form>
+    </ion-content>
+  </ng-template>
+</ion-modal>
 
-<ion-content>
-
-</ion-content>

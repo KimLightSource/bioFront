@@ -8,6 +8,8 @@ import { BpPageRoutingModule } from './bp-routing.module';
 
 import { BpPage } from './bp.page';
 import {LifelogService} from "../../../api/lifelogService";
+import {LifelogModalV2PageModule} from "../../lifelog-modal-v2/lifelog-modal-v2.module";
+import {AlertModule, CardModule, CollapseModule, GridModule} from "@coreui/angular";
 
 @NgModule({
   imports: [
@@ -16,6 +18,11 @@ import {LifelogService} from "../../../api/lifelogService";
     IonicModule,
     BpPageRoutingModule,
     IonicModule,
+    LifelogModalV2PageModule,
+    GridModule,
+    CollapseModule,
+    CardModule,
+
   ],
   providers: [
   ],

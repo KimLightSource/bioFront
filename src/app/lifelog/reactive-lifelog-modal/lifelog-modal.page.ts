@@ -33,7 +33,6 @@ export class LifelogModalPage implements OnInit {
     console.log(this.content);
     this.modalOpen = isOpen;
     this.modalClosed.emit(this.modalOpen)
-
     console.log(this.text)
 
   };

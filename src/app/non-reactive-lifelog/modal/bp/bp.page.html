@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>
       혈압
-      <ion-button class="add" fill="clear">
+      <ion-button class="add" fill="clear" (click)="setOpen(true)">
         <ion-icon slot="start" [ios]="'add' + '-outline'" [md]="'add' + '-sharp'"></ion-icon>
       </ion-button>
     </ion-title>
@@ -14,14 +14,14 @@
 
 <ion-content>
   <div *ngFor="let p of lifeLogData; let i = index">
-    <ion-item button detail="true" (click)="showDetail()">
+    <ion-item button detail="true" (click)="toggleCollapse(i)">
       <span class="left">{{p.dateTime}}</span>
       <p class="right">
         {{p.maxBp}}/{{p.minBp}} mmHg,
       </p>
     </ion-item>
-    <div *ngIf=detail>
-    <li>
+        <div [visible]="visible[i]" cCollapse>
+    <li >
       장소 : {{p.location}}
     </li>
     <li>
@@ -30,9 +30,16 @@
     <li>
       맥박 : {{p.pulse}}
     </li>
-    </div>
+        </div>
   </div>
 
+  <app-lifelog-modal-v2
+    [modalOpen]="modalOpen"
+    (modalClosed)="setClose($event)"
+    [modalData]="modalData"
+    [formGroup]="formGroup"
+  >
 
+  </app-lifelog-modal-v2>
 </ion-content>
 

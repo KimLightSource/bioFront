@@ -7,7 +7,6 @@ import {Lifelog} from "../model/lifelog";
   providedIn: 'root'
 })
 export class LifelogService {
-  url = 'http://localhost:8080';
 
   constructor(
     private http: HttpClient,
@@ -17,15 +16,20 @@ export class LifelogService {
 
 
   /* 로그인 */
-  signIn(form:any): Observable<HttpResponse<any>> {
+  saveModalData(form:any, url:any): Observable<HttpResponse<any>> {
     console.log(form)
-    return this.http.post<any>(`${this.url}/login`, form, { observe: 'response' })
+    return this.http.post<any>(`http://localhost:8080/${url}`, form, { observe: 'response' })
   }
 
   /* bp select */
   getAllBp() : Observable<any> {
-    return this.http.get<any>(`${this.url}/lifelog/Allbp`, { observe: 'response' })
+    return this.http.get<any>(`http://localhost:8080/lifelog/Allbp`, { observe: 'response' })
   }
+
+  getAllBs() : Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/lifelog/Allbs`, { observe: 'response' })
+  }
+
 
 
 
