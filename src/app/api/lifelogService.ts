@@ -13,6 +13,9 @@ export class LifelogService {
 
   ) { }
 
+  latestLifelog(): Observable<HttpResponse<any>> {
+    return this.http.get<any>(`http://localhost:8080/lifelog`,{ observe: 'response' })
+  }
 
 
   /* 로그인 */
@@ -28,6 +31,10 @@ export class LifelogService {
 
   getAllBs() : Observable<any> {
     return this.http.get<any>(`http://localhost:8080/lifelog/Allbs`, { observe: 'response' })
+  }
+
+  getAllWeight() : Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/lifelog/AllWeight`, { observe: 'response' })
   }
 
 

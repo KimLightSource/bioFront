@@ -32,9 +32,10 @@ export class LifelogModalV2Page implements OnInit {
   setClose(isOpen: boolean) {
     this.modalOpen = isOpen;
     this.modalClosed.emit(this.modalOpen);
+    this.modalService.formGroupDataInit(this.modalData, this.formGroup);
   };
 
-  async insertBp() {
+  async insertModalData() {
     this.lifelogService.saveModalData(this.formGroup.value, this.modalData.url)
       .subscribe( res => {
         if (res) {
@@ -49,7 +50,7 @@ export class LifelogModalV2Page implements OnInit {
 
   onSubmit():void {
     console.log('넘어간 데이터 :'+this.formGroup.value.forEach +', 요청 url :'+ this.modalData.url)
-    this.insertBp();
+    this.insertModalData();
     this.setClose(false)
     this.modalService.formGroupDataInit(this.modalData, this.formGroup);
     }

@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>weight</ion-title>
+    <ion-title>
+      몸무게
+      <ion-button class="add" fill="clear" (click)="setOpen(true)">
+        <ion-icon slot="start" [ios]="'add' + '-outline'" [md]="'add' + '-sharp'"></ion-icon>
+      </ion-button>
+    </ion-title>
+
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+  <div *ngFor="let p of lifeLogData; let i = index">
+    <ion-item button detail="true" (click)="toggleCollapse(i)">
+      <span class="left">{{p.dateTime}}</span>
+      <p class="right">
+        {{p.weight}} Kg,
+      </p>
+    </ion-item>
+    <c-col [visible]="visible[i]" cCollapse >
+      <li>
+        BMI : {{p.bodyMass}}
+      </li>
+      <li>
+        체지방(%) : {{p.bodyFat}}
+      </li>
+      <li>
+        측정장소 : {{p.location}}
+      </li>
+    </c-col>
+  </div>
+
+  <app-lifelog-modal-v2
+    [modalOpen]="modalOpen"
+    (modalClosed)="setClose($event)"
+    [modalData]="modalData"
+    [formGroup]="formGroup"
+  >
+
+  </app-lifelog-modal-v2>
 </ion-content>
+

@@ -18,23 +18,26 @@
       <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/bp']" >
         <ion-icon slot="start" [ios]="'pulse' + '-outline'" [md]="'pulse' + '-sharp'"></ion-icon>
         <ion-label> 혈압 </ion-label>
+        <ion-label class="right"> {{maxBp}}/{{minBp}} mmHg</ion-label>
       </ion-item>
       <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/bs']" >
         <ion-icon slot="start" [ios]="'fitness' + '-outline'" [md]="'fitness' + '-sharp'"></ion-icon>
         <ion-label> 혈당 </ion-label>
+        <ion-label class="right"> {{bs}} mg/dL</ion-label>
       </ion-item>
       <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/weight']" >
         <ion-icon slot="start" [ios]="'fast-food' + '-outline'" [md]="'fast-food' + '-sharp'"></ion-icon>
         <ion-label> 체중 </ion-label>
+        <ion-label class="right"> {{weight}} Kg</ion-label>
       </ion-item>
-      <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/cal']" >
-        <ion-icon slot="start" [ios]="'pulse' + '-outline'" [md]="'pulse' + '-sharp'"></ion-icon>
-        <ion-label> 칼로리 </ion-label>
-      </ion-item>
-      <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/step']" >
-        <ion-icon slot="start" [ios]="'footsteps' + '-outline'" [md]="'footsteps' + '-sharp'"></ion-icon>
-        <ion-label> 걸음수 </ion-label>
-      </ion-item>
+<!--      <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/cal']" >-->
+<!--        <ion-icon slot="start" [ios]="'pulse' + '-outline'" [md]="'pulse' + '-sharp'"></ion-icon>-->
+<!--        <ion-label> 칼로리 </ion-label>-->
+<!--      </ion-item>-->
+<!--      <ion-item routerLinkActive="selected" [routerLink]="['/tabs/nonReactiveLifelog/step']" >-->
+<!--        <ion-icon slot="start" [ios]="'footsteps' + '-outline'" [md]="'footsteps' + '-sharp'"></ion-icon>-->
+<!--        <ion-label> 걸음수 </ion-label>-->
+<!--      </ion-item>-->
     </ion-menu-toggle>
   </ion-list>
 

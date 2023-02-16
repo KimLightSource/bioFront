@@ -30,13 +30,14 @@ export class modalService {
 
   formGroupDataInit(modalData : any, formGroup : FormGroup):void {  // 폼 그룹 데이터 초기화
     let data : any = {}
-    for(let value of modalData.textData) {
-      data[value] = ''
-    }
-    for(let value of modalData.select) {
-      data[value.selectData] = ''
-    }
-    formGroup.setValue(data)
+    // for(let value of modalData.textData) {
+    //     //   data[value] = ''
+    //     // }
+    //     // for(let value of modalData.select) {
+    //     //   data[value.selectData] = ''
+    //     // }
+    //     // formGroup.setValue(data)
+    formGroup = this.formBuilder.group([])
   }
 
 }
