@@ -15,7 +15,7 @@
 <ion-content>
   <div *ngFor="let p of lifeLogData; let i = index">
     <ion-item button detail="true" (click)="toggleCollapse(i)">
-      <span class="left">{{p.dateTime}}</span>
+      <span class="left">{{p.dateTime | date: 'yyyy-MM-dd'}}</span>
       <p class="right">
         {{p.maxBp}}/{{p.minBp}} mmHg,
       </p>

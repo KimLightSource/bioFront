@@ -1,0 +1,115 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 900;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: middle;  }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+/**********************************/
+.no-drag {-ms-user-select: none;  user-select:none;}
+/************************************/
+/* HTML5 display-role reset for older browsers */
+body { font-family: "Noto Sans KR", sans-serif !important;font-weight:normal; font-size: 14px;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+*{font-family: "Noto Sans KR", sans-serif !important;}
+blockquote:before, blockquote:after,
+a{color: #000; vertical-align: top}
+a:hover{color: #000;}
+span{vertical-align: top;}
+.container-fluid{margin:0 auto !important;}
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  padding: 5px;
+}
+
+
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus {box-shadow: none;outline: 0 none;}
+
+/* inputButton */
+.loginBox .loginBox_input { width: 350px; margin: 0 auto; margin-top: 29px; }
+.input-1 { width: 100%; height: 45px; padding-left: 16px; border: solid 1px #DDD; border-radius: 4px; background-color: #fff; font-size: 16px; font-weight: normal; line-height: 1.5; letter-spacing: -0.84px; }
+.input-1::placeholder { font-size: 16px; font-weight: normal; line-height: 1.5; letter-spacing: -0.84px; color: #ccc; }
+.input-1:focus { border: 1px solid #002971; }
+
+/* radioButton */
+.radioBox_grp-1 { border-top: solid 1px #DDD; }
+.radioBox_grp-1 label { display: flex !important; justify-content: space-between; align-items: center; }
+.radioBox_grp-1 label .flag { width: 32.6px; height: 21.7px; object-fit: contain; margin-left: 16px; margin-right: 22px; }
+.radioBox_grp-1 label .recognition { width: 32px; height: 32px; object-fit: contain; margin-left: 22px; margin-right: 15px; }
+.radioBox_grp-1 input[type=radio]{ width: 0; height: 0; position: absolute; z-index: 10; left: -9999px; }
+.radioBox_grp-1 input[type=radio] + label{ margin: 0; width: 100%; height: 63px; box-sizing: border-box; position: relative; z-index: 10; display: inline-block;
+  border-bottom: solid 1px #DDD; background-color: #FFF; line-height: 47px; transition: border-color .15s ease-out,  color .25s ease-out,  background-color .15s ease-out, box-shadow .15s ease-out;
+  cursor: pointer; font-size: 16px; font-weight: normal; letter-spacing: -0.84px; color: #222; text-align: left; }
+.radioBox_grp-1 input[type=radio]:checked + label{ background-color: #f0f4ff; z-index: 1; }
+.radioBox_grp-2 { display: flex; justify-content: space-between; }
+.radioBox_grp-2 input[type=radio]{ width: 0; height: 0; position: absolute; z-index: 10; left: -9999px; }
+.radioBox_grp-2 input[type=radio] + label{ margin: 0; width: calc(50% - 4px); height: 50px; border-radius: 4px; box-sizing: border-box; position: relative;  z-index: 10; display: inline-block;
+  border: solid 1px #DDD; background-color: #FFF; line-height: 47px; text-align: center; transition: border-color .15s ease-out,  color .25s ease-out,  background-color .15s ease-out, box-shadow .15s ease-out;
+  cursor: pointer; font-size: 16px; font-weight: normal; letter-spacing: -0.84px; color: #8b8b8b; }
+.radioBox_grp-2 input[type=radio]:checked + label{ font-size: 16px; font-weight: 500; letter-spacing: -0.84px; color: #002971; border: solid 1px #002971; background-color: #f0f4ff; z-index: 1; }

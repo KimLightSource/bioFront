@@ -18,7 +18,7 @@ export class LifelogService {
   }
 
 
-  /* 로그인 */
+  // 모달데이터
   saveModalData(form:any, url:any): Observable<HttpResponse<any>> {
     console.log(form)
     return this.http.post<any>(`http://localhost:8080/${url}`, form, { observe: 'response' })
