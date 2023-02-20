@@ -2,44 +2,53 @@
   <ion-toolbar>
     <ion-title>
       혈당
-      <ion-button class="add" fill="clear" (click)="setOpen(true)">
-        <ion-icon slot="start" [ios]="'add' + '-outline'" [md]="'add' + '-sharp'"></ion-icon>
+      <ion-button class="add" fill="outline" (click)="setOpen(true)">
+        추가하기
       </ion-button>
     </ion-title>
-
   </ion-toolbar>
-
 </ion-header>
 
 
 <ion-content>
-  <div *ngFor="let p of lifeLogData; let i = index">
-    <ion-item button detail="true" (click)="toggleCollapse(i)">
-      <span class="left">{{p.dateTime}}</span>
-      <p class="right">
-        {{p.bs}} mg/dL,
-      </p>
-    </ion-item>
-    <c-col [visible]="visible[i]" cCollapse >
-      <li>
-        상태 : {{p.bsstatus}}
-      </li>
-      <li>
-        인슐린 복용상태 : {{p.insulin}}
-      </li>
-      <li>
-        측정장소 : {{p.measurementLocation}}
-      </li>
-    </c-col>
+  <div class="sub-Center">
+    <div class="inner">
+      <table class="table-1 mgT18">
+        <colgroup>
+          <col width="15%"/>
+          <col width="25%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+        </colgroup>
+
+        <tbody>
+        <tr class="thGrp" bgcolor="#f7faff">
+          <th>{{'측정 일시'}}</th>
+          <th>{{'혈당(mg/dL)'}}</th>
+          <th>{{'상태'}}</th>
+          <th>{{'인슐린 복용'}}</th>
+          <th>{{'장소' }}</th>
+        </tr>
+        <tr *ngFor="let lifelog of lifeLogData; let i = index">
+          <td>{{lifelog.dateTime | date: 'MM-dd HH:mm'}}</td>
+          <td>{{lifelog.bs}}</td>
+          <td>{{lifelog.bsstatus}}</td>
+          <td>{{lifelog.insulin}}</td>
+          <td>{{lifelog.measurementLocation}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <app-lifelog-modal-v2
+        [modalOpen]="modalOpen"
+        (modalClosed)="setClose($event)"
+        [modalData]="modalData"
+        [formGroup]="formGroup"
+      >
+      </app-lifelog-modal-v2>
+    </div>
   </div>
-
-  <app-lifelog-modal-v2
-    [modalOpen]="modalOpen"
-    (modalClosed)="setClose($event)"
-    [modalData]="modalData"
-    [formGroup]="formGroup"
-  >
-
-  </app-lifelog-modal-v2>
 </ion-content>
+
 

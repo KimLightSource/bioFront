@@ -10,35 +10,40 @@
 </ion-header>
 
 <ion-content>
-  <table class="table-1 mgT18">
-    <colgroup>
-      <col width="5%"/>
-      <col width="15%"/>
-      <col width="20%"/>
-      <col width="20%"/>
-      <col width="20%"/>
-      <col width="20%"/>
-    </colgroup>
+  <div class="sub-Center">
+    <div class="inner">
+      <table class="table-1 mgT18">
+        <colgroup>
+          <col width="5%"/>
+          <col width="15%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+        </colgroup>
 
-    <tbody><tr class="thGrp" bgcolor="#f7faff">
-      <th>{{'검사 시간'}}</th>
-      <th>{{'최대 혈압'}}</th>
-      <th>{{'최소 혈압'}}</th>
-      <th>{{'장소' }}</th>
-      <th>{{'복용 상태'}}</th>
-      <th>{{'맥박'}}</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let lifelog of lifeLogData; let i = index">
-      <td>{{lifelog.dateTime | date: 'MM-dd HH:mm'}}</td>
-      <td>{{lifelog.maxBp}}</td>
-      <td>{{lifelog.minBp}}</td>
-      <td>{{lifelog.location}}</td>
-      <td>{{lifelog.drugField}}</td>
-      <td>{{lifelog.pulse}}</td>
-    </tr>
-    </tbody>
-  </table>
+        <tbody>
+        <tr class="thGrp" bgcolor="#f7faff">
+          <th>{{'검사 일시'}}</th>
+          <th>{{'최대 혈압'}}</th>
+          <th>{{'최소 혈압'}}</th>
+          <th>{{'장소' }}</th>
+          <th>{{'복용 상태'}}</th>
+          <th>{{'맥박'}}</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let lifelog of lifeLogData; let i = index">
+          <td>{{lifelog.dateTime | date: 'MM-dd HH:mm'}}</td>
+          <td>{{lifelog.maxBp}}</td>
+          <td>{{lifelog.minBp}}</td>
+          <td>{{lifelog.location}}</td>
+          <td>{{lifelog.drugField}}</td>
+          <td>{{lifelog.pulse}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <app-lifelog-modal-v2
     [modalOpen]="modalOpen"
     (modalClosed)="setClose($event)"
