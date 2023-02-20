@@ -2,7 +2,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{modalData.lifelogName}}</ion-title>
+        <ion-title class="page-title">{{modalData.lifelogName}}</ion-title>
         <ion-buttons slot="end">
           <ion-button (click)="setClose(false)">Close</ion-button>
         </ion-buttons>
@@ -15,7 +15,7 @@
           <input type="text" class="input-1" formControlName="{{modalData.textData[i]}}">
         </p>
         <p *ngFor="let p of modalData.select; let i = index">
-          {{p.title}}
+          {{p.title}}<br>
           <span *ngFor="let q of p.selCont let i = index" class="radioBox_grp-2">
             <input id="{{q}}{{i}}" type="radio"  name="{{p.selectData}}" formControlName="{{p.selectData}}" value="{{p.selContData[i]}}">
             <label for="{{q}}{{i}}">{{q}}</label>
