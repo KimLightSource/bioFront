@@ -16,12 +16,12 @@
         </p>
         <p *ngFor="let p of modalData.select; let i = index">
           {{p.title}}
-          <span *ngFor="let q of p.selCont let i = index" >
-            {{q}}
-            <input type="radio"  name="{{p.selectData}}" formControlName="{{p.selectData}}" value="{{p.selContData[i]}}">
+          <span *ngFor="let q of p.selCont let i = index" class="radioBox_grp-2">
+            <input id="{{q}}{{i}}" type="radio"  name="{{p.selectData}}" formControlName="{{p.selectData}}" value="{{p.selContData[i]}}">
+            <label for="{{q}}{{i}}">{{q}}</label>
           </span>
         </p>
-        <ion-button type="submit" (click)="presentAlert()">등록하기</ion-button>
+        <button type="submit" (click)="presentAlert()" class="btn-2 mgT12">등록하기</button>
       </form>
     </ion-content>
   </ng-template>
