@@ -14,15 +14,14 @@
         <label> {{p}} </label>
         <input type="text">
       </p>
-      <p *ngFor="let p of content.select; let i = index">
+      <p *ngFor="let p of content.select let i1= index;" >
         {{p.title}}
-        <span *ngFor="let q of p.selCont let i = index">
-          <label> {{q}}</label>
-          <input type="radio" value="{{q}}" name="{{p.title}}" >
+        <span *ngFor="let q of p.selCont; let i2 = index" class="select">
+          <label for="{{q}}+{{i2}}"> {{q}}</label>
+          <input type="radio" value="{{q}}" name="{{p.title}}" id="{{q}}+{{i2}}">
         </span>
-
       </p>
-        <button type="submit">등록하기</button>
+        <button type="submit" class="btn-1 mgT30">등록하기</button>
       </form>
     </ion-content>
   </ng-template>
