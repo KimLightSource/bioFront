@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+<ion-content>
+
+  <body class="back-img">
+  <div class="wrapper po-rel">
+    <div class="con">
+      <div class="login">
+        <div class="centerBox">
+          <div class="loginBox">
+            <div class="loginBox_tit">
+              <div class="logo_po mgT22">
+                <span class="logo_po_bold">{{'라이프로그'}}</span><span>{{'조회하기'}}</span>
+              </div>
+              <p class="subtxt" innerHTML="{{'Lifelog change your Life'}}"></p>
+            </div>
+
+            <form [formGroup]="form">
+              <div class="loginBox_input">
+                <p class="inputLabel mgT27">{{'아이디'}}</p>
+                <input class="input-1" type="text" placeholder="{{'input-id'}}" formControlName="loginId" >
+                <p class="inputLabel mgT27">{{'비밀번호'}}</p>
+                <input class="input-1" type="password" placeholder="{{'input-pw'}}" formControlName="password">
+                <button class="btn-1 mgT30" type="button" >{{'로그인'}}</button>
+              </div>
+            </form>
+
+
+          </div>
+
+        </div>
+      </div><!--//main-->
+    </div><!--//con-->
+  </div><!--//wrapper-->
+  </body>
+
+</ion-content>
