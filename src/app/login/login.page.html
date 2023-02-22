@@ -1,49 +1,35 @@
-
-<!--<ion-content >-->
-<!--  <ion-grid>-->
-<!--    <ion-row>-->
-<!--      <ion-card>-->
-<!--        <ion-item>-->
-<!--          <ion-label >id</ion-label>-->
-<!--          <ion-input type="text" [(ngModel)]="member.username"></ion-input>-->
-<!--        </ion-item>-->
-<!--        <ion-item>-->
-<!--          <ion-label >Password</ion-label>-->
-<!--          <ion-input type="password" [(ngModel)]="member.password"></ion-input>-->
-<!--        </ion-item>-->
-<!--        <button  (click)="signIn();">Login</button>-->
-<!--        <button (click)="signUp();">Register</button>-->
-<!--      </ion-card>-->
-<!--    </ion-row>-->
-<!--  </ion-grid>-->
-<!--</ion-content>-->
-
 <ion-content>
-  <div class="container">
-    <div class="screen">
-      <div class="screen__content">
-        <form class="login" [formGroup]="form" >
-          <div class="login__field">
-            <i class="login__icon fas fa-user"></i>
-            <input type="text" class="login__input" placeholder="User name / Email" formControlName="id">
+
+<body class="back-img">
+<div class="wrapper po-rel">
+  <div class="con">
+    <div class="login">
+      <div class="centerBox">
+        <div class="loginBox">
+          <div class="loginBox_tit">
+            <div class="logo_po mgT22">
+              <span class="logo_po_bold">{{'라이프로그'}}</span><span>{{'조회하기'}}</span>
+            </div>
+            <p class="subtxt" innerHTML="{{'Lifelog change your Life'}}"></p>
           </div>
-          <div class="login__field">
-            <i class="login__icon fas fa-lock"></i>
-            <input type="password" class="login__input" placeholder="Password" formControlName="password">
-          </div>
-          <button class="button login__submit" (click)="signIn()">
-            <span class="button__text" >Log In Now</span>
-            <i class="button__icon fas fa-chevron-right"></i>
-          </button>
-        </form>
+
+          <form [formGroup]="form">
+            <div class="loginBox_input">
+              <p class="inputLabel mgT27">{{'이메일'}}</p>
+              <input class="input-1" type="text" placeholder="{{'input-id'}}" formControlName="loginId" >
+              <p class="inputLabel mgT27">{{'비밀번호'}}</p>
+              <input class="input-1" type="password" placeholder="{{'input-pw'}}" formControlName="password">
+              <button class="btn-1 mgT30" type="button" >{{'로그인'}}</button>
+            </div>
+          </form>
+
+
+        </div>
+
       </div>
-      <div class="screen__background">
-        <span class="screen__background__shape screen__background__shape4"></span>
-        <span class="screen__background__shape screen__background__shape3"></span>
-        <span class="screen__background__shape screen__background__shape2"></span>
-        <span class="screen__background__shape screen__background__shape1"></span>
-      </div>
-    </div>
-  </div>
+    </div><!--//main-->
+  </div><!--//con-->
+</div><!--//wrapper-->
+</body>
 
 </ion-content>

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
@@ -10,6 +10,11 @@ const routes: Routes = [
     path: 'lifelog-modal-v2',
     loadChildren: () => import('./non-reactive-lifelog/lifelog-modal-v2/lifelog-modal-v2.module').then(m => m.LifelogModalV2PageModule)
   },
+  {
+    path: 'sign-up',
+    loadChildren: () => import('./login/sign-up/sign-up.module').then(m => m.SignUpPageModule)
+  },
+
   // {
   //   path: 'lifelog-modal',
   //   loadChildren: () => import('./lifelog/reactive-lifelog-modal/lifelog-modal.module').then(m => m.LifelogModalPageModule)

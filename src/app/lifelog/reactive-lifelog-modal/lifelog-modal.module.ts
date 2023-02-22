@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { LifelogModalPageRoutingModule } from './lifelog-modal-routing.module';
+import {LifelogModalPageRoutingModule} from './lifelog-modal-routing.module';
 
-import { LifelogModalPage } from './lifelog-modal.page';
-import {modalService} from "../../api/modal-service";
+import {LifelogModalPage} from './lifelog-modal.page';
 
 @NgModule({
   imports: [

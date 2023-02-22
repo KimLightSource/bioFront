@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {NavController} from "@ionic/angular";
-import {LifelogService} from "../api/lifelogService";
+import {LifelogService} from "../services/lifelog.service";
 
 @Component({
   selector: 'non-reactive-lifelog',

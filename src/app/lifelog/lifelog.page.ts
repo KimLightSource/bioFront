@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ModalController} from "@ionic/angular";
-import {modalService} from "../api/modal-service";
 import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({

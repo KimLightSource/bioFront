@@ -1,10 +1,10 @@
-<ion-modal [isOpen]="modalOpen">
+<ion-modal [isOpen]="modalOpen" (ionModalDidDismiss)="setClose(false)" >
   <ng-template>
     <ion-header>
       <ion-toolbar>
         <ion-title class="page-title">{{modalData.lifelogName}}</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="setClose(false)">Close</ion-button>
+          <ion-button (click)="setClose(false)" fill="outline">닫기</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>

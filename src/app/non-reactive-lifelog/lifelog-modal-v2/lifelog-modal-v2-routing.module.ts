@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { LifelogModalV2Page } from './lifelog-modal-v2.page';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BrowserModule} from "@angular/platform-browser";
+import {LifelogModalV2Page} from './lifelog-modal-v2.page';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {

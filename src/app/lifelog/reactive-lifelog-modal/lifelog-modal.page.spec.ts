@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {IonicModule} from '@ionic/angular';
 
-import { LifelogModalPage } from './lifelog-modal.page';
+import {LifelogModalPage} from './lifelog-modal.page';
 
 describe('LifelogModalPage', () => {
   let component: LifelogModalPage;

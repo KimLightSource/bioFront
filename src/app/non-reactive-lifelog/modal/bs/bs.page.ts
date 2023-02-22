@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {LifelogService} from "../../../api/lifelogService";
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {modalService} from "../../../api/modal-service";
+import {Component, OnInit} from '@angular/core';
+import {LifelogService} from "../../../services/lifelog.service";
+import {FormGroup} from "@angular/forms";
+import {modalService} from "../../../services/modal.service";
 
 @Component({
   selector: 'app-bs',

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {modalService} from "../../api/modal-service";
-import {LifelogService} from "../../api/lifelogService";
+import {modalService} from "../../services/modal.service";
+import {LifelogService} from "../../services/lifelog.service";
 import {AlertController} from "@ionic/angular";
 
 @Component({
@@ -52,7 +52,6 @@ export class LifelogModalV2Page implements OnInit {
     console.log('넘어간 데이터 :'+this.formGroup.value.forEach +', 요청 url :'+ this.modalData.url)
     this.insertModalData();
     this.setClose(false)
-    this.modalService.formGroupDataInit(this.modalData, this.formGroup);
     }
 
 

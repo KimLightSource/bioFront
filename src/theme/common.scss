@@ -369,6 +369,9 @@ button { border: 0; background: none; }
 .sub-Center h1{ font-size: 28px;font-weight: bold;color: #444; border-bottom: 1px solid #bababa; padding-bottom: 24px}
 .sub-Center .inner{padding: 55px 3.2% 55px;}
 
+.back-img {margin: 0;padding: 0;max-width: 100%;background-size: cover;background-color: aliceblue;}
+.centerBox{width: 558px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 10px;background-color: #ffffff; padding: 40px}
+.centerBox-1{width: 520px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 10px;background-color: #ffffff; padding: 32px 32px 72px}
 /*
 
 !*-----------------------------------------------------------------------*!

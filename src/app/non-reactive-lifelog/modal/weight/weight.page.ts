@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {LifelogService} from "../../../api/lifelogService";
-import {modalService} from "../../../api/modal-service";
+import {LifelogService} from "../../../services/lifelog.service";
+import {modalService} from "../../../services/modal.service";
 
 @Component({
   selector: 'app-weight',
