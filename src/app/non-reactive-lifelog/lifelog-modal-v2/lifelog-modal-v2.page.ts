@@ -40,9 +40,14 @@ export class LifelogModalV2Page implements OnInit {
       .subscribe( res => {
         if (res) {
           console.log(res.body);
+          this.presentAlert('저장되었습니다')
         }
       }, async error => {
-      })
+        console.log(error);
+        await this.presentAlert('저장실패했습니다');
+      }
+
+      )
   }
 
 
@@ -55,9 +60,9 @@ export class LifelogModalV2Page implements OnInit {
     }
 
 
-  async presentAlert() {
+  async presentAlert(message:string) {
     const alert = await this.alertController.create({
-      header: '저장되었습니다',
+      header: message,
       buttons: ['OK'],
     });
     await alert.present();

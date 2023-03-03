@@ -19,7 +19,7 @@ export class LoginPage {
   form: FormGroup;
 
   constructor(
-    private rout : Router,
+    private router : Router,
     private builder: FormBuilder,
     private memberService: MemberService,
     private storage: StorageService,
@@ -27,48 +27,59 @@ export class LoginPage {
   ) {
     this.form = this.builder.group(
       {
-        loginId : this.builder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+        uid : this.builder.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
         password :  this.builder.control('', [Validators.required, Validators.minLength(6), Validators.maxLength(15)])
   }
     )
   }
 
-  get email(): FormControl {
-    return this.form.get('email') as FormControl;
+  get uid(): FormControl {
+    return this.form.get('uid') as FormControl;
   }
 
   get password(): FormControl {
     return this.form.get('password') as FormControl;
   }
 
-  // login() {
-  //   this.memberService.login(this.form.value)
-  //     .subscribe({
-  //       next: res => {
-  //         const token = res.headers.get('authorization');
-  //         this.storage.set(StorageType.Token, token);
-  //         this.rout.navigateByUrl('/tabs/nonReactiveLifelog');
-  //       },
-  //       error : err => {
-  //         this.form.reset();
-  //       }
-  //     });
-  // }
+
 
   // 이메일과 비밀번호를 이용한 로그인
   loginWithEmailAndPassword(): void {
     this.memberService.loginWithEmailAndPassword(
-      this.email.value,
+      this.uid.value,
       this.password.value
     )
-      .then((user) => {
+      .then((res) => {
         // 로그인 성공 시 HomeComponent로 이동
-        this.rout.navigateByUrl('/tabs/nonReactiveLifelog');
+        // const token = user.headers.get('authorization');
+        // this.storage.set(StorageType.Token, token);
+        // const token = res.user?.getIdToken();
+        // console.log(token)
+        // this.storage.set(StorageType.Token, token);
+        this.router.navigateByUrl('/tabs/nonReactiveLifelog');
       })
       .catch(err => {
         // 로그인 실패 시
         console.error(err);
         alert(err.message);
+      });
+  }
+
+  //JWT를 이용한 로그인
+  login() {
+    this.memberService.login(
+      this.form.value
+    )
+      .subscribe({
+        next: res => {
+          console.log(res)
+          const token = res.headers.get('authorization');
+          this.storage.set(StorageType.Token, token);
+          this.router.navigateByUrl('/tabs/nonReactiveLifelog');
+        },
+        error : err => {
+          this.form.reset();
+        }
       });
   }
 

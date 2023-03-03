@@ -23,6 +23,7 @@ export class MemberService {
 
   // 이메일과 비밀번호를 이용한 로그인
   loginWithEmailAndPassword(email: string, password: string): Promise<firebase.auth.UserCredential> {
+
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
@@ -38,5 +39,17 @@ export class MemberService {
     });
     return this.afAuth.signInWithPopup(provider);
   }
+
+  //JWT를 이용한 로컬 로그인
+  login(form:string) : Observable<any> {
+    console.log(form);
+    return this.http.post<any>(`${this.url}/member/login`,form, { observe: 'response' })
+  }
+
+  //JWT 로컬 회원가입
+  signUp(form:string) : Observable<any> {
+    return this.http.post<any>(`${this.url}/member/signUp`, form,{ observe: 'response' })
+  }
+
 
 }
